@@ -19,7 +19,7 @@
 		<div class="alert alert-danger">¡Error! No se ha guardado la url</div>
 	</c:if>
 	<input type="text" name="name" class="form-control" placeholder="Nombre"><br/>
-	<input type="text" name="url" class="form-control" placeholder="Url"><br/>
+	<input type="text" name="url" id="url" class="form-control" placeholder="Url"><br/>
 	<textarea rows="5" name="description" class="form-control" placeholder="Descripción"></textarea><br/>
 	<input type="submit" value="Enviar" class="btn btn-lg btn-primary">
 </form>
@@ -32,12 +32,12 @@
 	
 	$(document).ready(function(){
 		$(".form-signin").submit(function(){
-			var url = $(".name").val();
+			var url = $("#url").val();
 			var err = $(".errorMessage");
 			if(!isValidUrl(url)){
 				err.show();
 				err.text("Url incorrecta");
-				$(".url").focus();
+				$("#url").focus();
 				return false;
 			}
 			return true;
