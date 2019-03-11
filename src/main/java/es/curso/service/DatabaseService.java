@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.Persistence;
 
 import es.curso.entity.Email;
+import es.curso.entity.Web;
 
 public class DatabaseService {
 
@@ -46,6 +47,26 @@ public class DatabaseService {
 	public static void delete(int emailId) {
 		entityManager.getTransaction().begin();
 		entityManager.remove(entityManager.find(Email.class, emailId));
+		entityManager.getTransaction().commit();
+	}
+	
+	public static void insertWeb(Web web) {
+		entityManager.getTransaction().begin();
+		entityManager.persist(web);
+		entityManager.getTransaction().commit();
+	}
+	
+	public static List<Web> listWebs() {
+		return entityManager.createQuery("select w from Web w", Web.class).getResultList();
+	}
+	
+	public static Web getWeb(int webId) {
+		return entityManager.find(Web.class, webId);
+	}
+	
+	public static void deleteWeb(int webId) {
+		entityManager.getTransaction().begin();
+		entityManager.remove(entityManager.find(Web.class, webId));
 		entityManager.getTransaction().commit();
 	}
 }

@@ -8,9 +8,12 @@
 <link rel="stylesheet" href="resources/css/bootstrap.min.css" />
 <link rel="stylesheet" href="resources/css/signin.css" />
 <!-- JQuery -->
-<script type="text/javascript" src="<c:url value="/resources/js/jquery-2.0.3.min.js" />"></script>
-<script type="text/javascript" src="<c:url value="/resources/js/jquery-2.0.3.min.map" />"></script>
-<script type="text/javascript" src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
+<script type="text/javascript"
+	src="<c:url value="/resources/js/jquery-2.0.3.min.js" />"></script>
+<script type="text/javascript"
+	src="<c:url value="/resources/js/jquery-2.0.3.min.map" />"></script>
+<script type="text/javascript"
+	src="<c:url value="/resources/js/bootstrap.min.js" />"></script>
 
 </head>
 <body>
@@ -33,6 +36,12 @@
 					<c:url var="listEmailsUrl" value="/list-emails.html" />
 					<li ${param.page == 'emails' ? 'class="active"' : ''}><a
 						href="${listEmailsUrl}">Lista de correos</a></li>
+					<c:url var="listWebsUrl" value="/list-webs.html" />
+					<li ${param.page == 'webs' ? 'class="active"' : ''}><a
+						href="${listWebsUrl}">Lista de webs</a></li>
+					<c:url var="saveWeb" value="/webForm.jsp" />
+					<li ${param.page == 'webForm' ? 'class="active"' : ''}><a
+						href="${saveWeb}">Guardar Web</a></li>
 				</ul>
 			</div>
 			<!--/.nav-collapse -->
